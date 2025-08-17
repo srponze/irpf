@@ -45,7 +45,7 @@ class CSVDivisas:
             for row in (
                 row for row in reader if row[l(A_DIVISA)] in listaDivisasSinEur
             ):
-                if row[l(A_TIPODECAMBIO)] != "":
+                if row[l(A_TIPODECAMBIO)] != "" and row[l(A_PRODUCTO)] != "":
 
                     if float(row[l(A_VARIACION)].replace(",", ".")) > 0:
                         producto = "Ingreso"
