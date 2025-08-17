@@ -17,9 +17,9 @@ class CSVDivisas:
             stringHora = row[l(A_HORA)]
             hora, minutos = stringHora.split(":")
 
-            precio = abs(float(row[l(A_VARIACION)]))
+            precio = abs(float(row[l(A_VARIACION)].replace(",", ".")))
             valorLocal = -precio * numero
-            tipoDeCambio = 1 / float(row[l(A_TIPODECAMBIO)])
+            tipoDeCambio = 1 / float(row[l(A_TIPODECAMBIO)].replace(",", "."))
             valor = valorLocal * tipoDeCambio
             total = valor + 10
             return Movimiento(
@@ -47,7 +47,7 @@ class CSVDivisas:
             ):
                 if row[l(A_TIPODECAMBIO)] != "":
 
-                    if float(row[l(A_VARIACION)]) > 0:
+                    if float(row[l(A_VARIACION)].replace(",", ".")) > 0:
                         producto = "Ingreso"
                         numero = -1
                     else:
