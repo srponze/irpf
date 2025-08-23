@@ -13,6 +13,7 @@ from irpf.fifo.fifoDivisas import FifoDivisas
 from irpf.modelo.movimiento import Movimiento
 from irpf.modelo.transaccion import Transaccion
 from irpf.play import Play
+from irpf.constantes.mensajesTerminal import *
 
 
 class ManagerMeta(type):
@@ -139,6 +140,7 @@ class Manager(metaclass=ManagerMeta):
 
         if self.imprimirMovAcciones and listaMovAcciones:
             print("\n####### MOVIMIENTOS DE ACCIONES #######")
+            print(msgMovAcciones)
             for movimiento in listaMovAcciones:
                 print(movimiento)
 
@@ -153,6 +155,7 @@ class Manager(metaclass=ManagerMeta):
 
         if self.imprimirMovAcciones and listaAsientos:
             print("\n####### POSICIONES DE ACCIONES A FINAL DEL PERIODO #######")
+            print(msgMovAcciones)
             for key in listaAsientos:
                 for movimiento in listaAsientos[key]:
                     print(movimiento)
@@ -162,6 +165,7 @@ class Manager(metaclass=ManagerMeta):
 
         if self.imprimirTransAcciones and self.transaccionesAcciones:
             print("\n####### TRANSACCIONES DE ACCIONES #######")
+            print(msgTransAcciones)
             for key in self.transaccionesAcciones:
                 for transaccion in self.transaccionesAcciones[key]:
                     print(transaccion)
