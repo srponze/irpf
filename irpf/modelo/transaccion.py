@@ -8,7 +8,4 @@ class Transaccion:
         self.transmision = transmision
 
     def __str__(self):
-        return (
-            f"Adquisición: {self.adquisicion}\n"
-            f"Transmisión: {self.transmision}"
-        )
+        return f"Adquisición: {self.adquisicion}\n" f"Transmisión: {self.transmision}"
