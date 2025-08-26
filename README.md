@@ -1,34 +1,51 @@
-# CALCULO E INTRODUCCIÓN DE GANANCIAS Y PERDIDAS POR COMPRA-VENTA DE ACCIONES EN EL IRPF ESPAÑOL (RENTAWEB) EN DEGIRO
+# Calculadora de Ganancias Patrimoniales para Renta Web
 
-## Descripción
-Esta aplicación sirve para calcular e introducir en rentaWeb las ganancias y perdidas patrimoniales producidas por compra-venta de acciones cotizadas tanto en euros como en otras divisas y teniendo en cuenta el metodo FIFO, para ello se sirve de los informes de estado de cuenta y transacciones que genera Degiro, tambien calcula la compra-venta de divisas implicita de las acciones cotizadas en otras divisas al euro. segun esta web: https://www.filios.app/blog/como-meter-las-operaciones-con-divisas-en-el-irpf/
+Esta herramienta simplifica la declaración de la renta para inversores. Automatiza el cálculo de las ganancias y pérdidas patrimoniales derivadas de la compra y venta de acciones cotizadas y ETFs y las introduce en Renta Web.
 
-Se debe de escoger el rango de fechas de los informes desde el momento de alguna compra de alguna accion que se haya vendido en el año del que se quiere calcular el irpf hasta el ultimo dia del año, por ejemplo: si queremos calcular el irpf de 2025 y en ese año hemos vendido alguna accion comprada en 2024 (según el metodo FIFO), debemos de incluirla en el informe, no te preocupes, el resto de las acciones compradas en 2024 no las tienes en cuenta. 
+
+## Caracteristicas principales
+Cálculo automático y preciso: La aplicación procesa tus informes de Degiro y determina las ganancias o pérdidas patrimoniales.
+
+Método FIFO: Utiliza el método First-In, First-Out (FIFO) para cumplir con la normativa de la Agencia Tributaria Española.
+
+Manejo de múltiples divisas: Calcula automáticamente las ganancias para acciones cotizadas en euros y en otras divisas, incluyendo la propia tributacion de la tenencia de divisa estranjera siguiendo este articulo https://www.filios.app/blog/como-meter-las-operaciones-con-divisas-en-el-irpf/
+
+Datos listos para Renta Web: Genera los datos que necesitas para que autónomamente sean introducidos en Renta Web mediante el paquete playwright.
+(Actualmente solo pueden ser introducidos en una simulación de Renta Web, mas adelante podras introducirlos en tu propia sesión)
+
 
 ## Instalación
 1. Clona este repositorio:
    ```bash
    git clone https://github.com/srponze/irpf.git
    ```
-2. Navega al directorio del proyecto:
+2. Instala las dependencias necesarias:
    ```bash
-   cd irpf
-   ```
-3. Instala las dependencias necesarias:
-   ```bash
-   pip install -r playwright
+   pip install playwright
    ```
 
+
 ## Uso
-1. Descarga los informes "estado de cuenta" y "transacciones" del broker Degiro apropiados para el año que queremos calcular en formato CSV, estan en Buzón.
-2. Introduce en cliente.py la ruta de ambos informes y el año a calcular, y selecciona los parametros de la clase Manager
-3. Ejecuta el script principal:
+1. Descarga tus informes: Obtén los informes de "Estado de cuenta" y "Transacciones" de tu cuenta de Degiro.
+Asegúrate de que el rango de fechas de los informes cubra desde el momento de la primera compra de alguna de las acciones que has vendido en el año fiscal, hasta el último día de dicho año. Esto es crucial para que el método FIFO se aplique correctamente.
+
+   EJ: Si en 2025 has vendido varias acciones compradas en 2024, aumenta el rango inicial hasta el momento de dicha compra, no te preocupes por el resto de acciones que no se hayan vendido en 2025 que incluyas, no se tendran en cuenta
+
+3. Introduce en cliente.py la ruta de ambos informes y el año a calcular, y selecciona los parametros de la clase Manager
+
+4. Ejecuta el script cliente.py:
    ```bash
    python cliente.py
    ```
 
+
+## Opciones
+(Por documentar)
+
+
 ## Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo `LICENSE`.
+
 
 ## Contacto
 Para preguntas o soporte, contacta a [srponze](https://github.com/srponze).
