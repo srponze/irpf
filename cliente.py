@@ -1,7 +1,7 @@
 from irpf.manager import Manager
 
-accountPath = "Ruta/al/informe/account/de/Degiro"
-transactionPath = "Ruta/al/informe/transaction/de/Degiro"
+accountPath = "Account.csv"
+transactionPath = "Transactions.csv"
 añoRenta = 2025
 
 manager = Manager(

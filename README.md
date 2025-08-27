@@ -1,6 +1,6 @@
 # Calculadora de Ganancias Patrimoniales para Renta Web
 
-Esta herramienta simplifica la declaración de la renta para inversores. Automatiza el cálculo de las ganancias y pérdidas patrimoniales derivadas de la compra y venta de acciones cotizadas y ETFs y las introduce en Renta Web.
+Esta herramienta simplifica la declaración de la renta para inversores. Automatiza el cálculo de las ganancias y pérdidas patrimoniales derivadas de la compra y venta de acciones cotizadas y ETF y las introduce en Renta Web.
 
 
 ## Características principales
@@ -15,7 +15,7 @@ Datos listos para Renta Web: Genera los datos que necesitas para que autónomame
 
 
 ## Instalación
-1. Clona este repositorio:
+1. Clona este repositorio o descarga el archivo Zip y descomprímelo:
    ```bash
    git clone https://github.com/srponze/irpf.git
    ```
@@ -26,12 +26,12 @@ Datos listos para Renta Web: Genera los datos que necesitas para que autónomame
 
 
 ## Uso
-1. Descarga tus informes: Obtén los informes de "Estado de cuenta" y "Transacciones" de tu cuenta de Degiro.
+1. Obtén los informes de "Estado de cuenta" y "Transacciones" de tu cuenta de Degiro en formato csv.
 Asegúrate de que el rango de fechas de los informes cubra desde el momento de la primera compra de alguna de las acciones que has vendido en el año fiscal, hasta el último día de dicho año. Esto es crucial para que el método FIFO se aplique correctamente.
 
    Ej: Si en 2025 has vendido varias acciones compradas en 2024, aumenta el rango inicial hasta el momento de dicha compra, no te preocupes por el resto de acciones que no se hayan vendido en 2025 que incluyas, no se tendrán en cuenta
 
-3. Introduce en cliente.py la ruta de ambos informes y el año a calcular, y selecciona los parámetros de la clase Manager
+3. Mueve los archivos Account.csv y Transactions.csv al directorio donde hayas descargado el código 
 
 4. Ejecuta el script cliente.py:
    ```bash

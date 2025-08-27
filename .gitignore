@@ -1,5 +1,7 @@
-**/__pycache__/
+__pycache__
 Tareas.pxt
 client.py
 pruebas.py
 .python-version
+Account.csv
+Transactions.csv
